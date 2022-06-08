@@ -26,10 +26,15 @@ enum SORTS{
     COUNT
 };
 
+#ifndef STRCT
+#define STRCT
+
+
 struct elem{
     int el{0};
     int selec{0};
 };
+#endif
 
 elem make_elem(int x, bool s = 0){
     elem a;
