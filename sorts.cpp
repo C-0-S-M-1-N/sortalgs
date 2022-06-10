@@ -30,7 +30,7 @@ int bblsrt(std::vector<elem> &v, sf::RenderWindow& win){
     }
     return 1;
 }
-int instsrt(std::vector<elem>& v, sf::RenderWindow& win){
+int ssrt(std::vector<elem>& v, sf::RenderWindow& win){
     int n = v.size();
     for(int i = 0; i<n; i++){
         v[i].selec = 1;
@@ -122,4 +122,9 @@ int msrt(std::vector<elem>& v, sf::RenderWindow& win, int l, int r){
         }
     }
     return 1;
+}
+
+int rsrt(std::vector<elem>& v, sf::RenderWindow& win, int mcif){
+    return 1;
+
 }
