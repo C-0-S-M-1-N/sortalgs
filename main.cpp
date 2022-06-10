@@ -21,6 +21,7 @@ enum SORTS{
     INSERTION,
     QUICK,
     MERGE,
+    RADIX,
     SELECTION,
     HEAP,
     COUNT
@@ -47,10 +48,11 @@ int bblsrt(std::vector<elem>&, sf::RenderWindow&);
 int instsrt(std::vector<elem>&, sf::RenderWindow&);
 int qsrt(std::vector<elem>&, sf::RenderWindow&, int, int);
 int msrt(std::vector<elem>&, sf::RenderWindow&, int , int);
-
+int rsrt(std::vector<elem>&, sf::RenderWindow&);
 
 void disp(sf::RenderWindow&, const std::vector<elem>);
-
+int q;
+float sec = 0;
 int main(){
     bar.setFillColor(sf::Color::White);
     bar.setSize(sf::Vector2f(10, 60));  
@@ -76,7 +78,7 @@ int main(){
     // win.setFramerateLimit(60);
     
     // std::sort(v.begin(), v.end());   
-    int q = 0;
+    q = 0;
     Smsg = "Sort: ";
     Tmsg = "Visual Time: ";
     Emsg = "Elements: " + std::to_string(n);
@@ -119,8 +121,10 @@ int main(){
 }
 
 void disp(sf::RenderWindow &win, const std::vector<elem> v){
+    
     //time part
-    float sec = fromMsToSec(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start).count());
+    if(!q)
+    sec = fromMsToSec(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start).count());
     Tmsg = "Visual Time: " + std::to_string(sec);
     Tmsg += "s";
     
